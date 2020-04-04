@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>ebooks</title>
+</head>
+
+<body class="bg-primary text-white">
+  {{>nav}}
+  <div class="container">
+
+    <section class="py-2">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h1 class="display-3 mt-3 pt-5">
+            MERN STACK Ebook
+          </h1>
+          <p class="lead">learn web development front to back</p>
+          <form action="/charge" method="POST">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="{{stripePublishableKey}}" data-amount="2500" data-name="Web Development Ebook"
+              data-description="Ebook written by yogi" data-image="/img/q.jpg" data-locale="auto">
+              </script>
+            <script>
+
+
+
+              // Hide default stripe button
+              document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+            </script>
+            <button type="submit" class="btn btn-dark text-white btn-lg">Purchase For $25</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <img src="/img/3.png" class="img-fluid mt-3" height="100" width="300">
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
